@@ -9,6 +9,11 @@ const sqliteClient = createClient({
     url: env.DATABASE_URL,
 });
 
-export const db = drizzle(sqliteClient);
+export const db = drizzle(sqliteClient, {
+    schema: {
+        user: userTable,
+        session: sessionTable,
+    },
+});
 
 export const dbAdapter = new DrizzleSQLiteAdapter(db, sessionTable, userTable);

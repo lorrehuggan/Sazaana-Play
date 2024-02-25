@@ -1,16 +1,14 @@
-import { validateRequest } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { db } from '@/lib/db';
+import { headers } from 'next/headers';
+
+async function searchArtist(formData: FormData) {
+    'use server';
+    const artist = formData.get('artist');
+}
 
 export default async function Page() {
-    const { user, session } = await validateRequest();
-
-    if (!session) {
-        return redirect('/login');
-    }
-
-    return (
-        <div>
-            <p>{session.userId}</p>
-        </div>
-    );
+    return <></>;
 }

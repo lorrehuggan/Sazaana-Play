@@ -11,9 +11,10 @@ export async function GET(request: Request): Promise<Response> {
     const url = new URL(request.url);
 
     const code = url.searchParams.get('code');
-    const storedState = cookies().get('spotify_oauth_state')?.value ?? null;
-    const codeVerifierCookie =
-        cookies().get('spotify_auth_code_verifier')?.value ?? null;
+    const storedState = cookies().get('spotify_oauth_state')?.value;
+    const codeVerifierCookie = cookies().get(
+        'spotify_auth_code_verifier',
+    )?.value;
 
     if (!code || !storedState || !codeVerifierCookie) {
         return new Response(null, {

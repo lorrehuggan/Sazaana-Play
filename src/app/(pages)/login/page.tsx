@@ -15,9 +15,9 @@ export default function Page() {
                         Straight Forward Playlist Builder
                     </p>
                     <form>
-                        <Button className="w-full">
+                        <Button className="w-full" asChild>
                             <Link
-                                href="/api/auth/spotify"
+                                href="/login/spotify"
                                 className="flex gap-2 items-center"
                             >
                                 <svg
@@ -41,7 +41,7 @@ export default function Page() {
                 </div>
             </div>
             <div className="col-span-2 h-full p-4">
-                <div className="relative h-full w-full rounded overflow-hidden">
+                <div className="relative h-full w-full rounded-lg overflow-hidden">
                     <Image
                         src="/images/hero.jpg"
                         alt="Playlist"
