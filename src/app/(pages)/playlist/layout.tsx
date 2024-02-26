@@ -82,13 +82,9 @@ export default async function Layout({
                             <Input
                                 placeholder="Taylor Swift"
                                 name="artist"
-                                className="mt-1 w-full text-lg"
+                                className="mt-1 w-full text-lg bg-secondary"
                             />
-                            <Button
-                                type="submit"
-                                variant="outline"
-                                className="text-foreground"
-                            >
+                            <Button type="submit" variant="secondary">
                                 Create
                             </Button>
                         </fieldset>

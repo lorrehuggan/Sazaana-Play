@@ -20,6 +20,8 @@ export const sessionTable = sqliteTable('session', {
         .notNull()
         .references(() => userTable.id),
     expiresAt: integer('expires_at').notNull(),
+    refreshToken: text('refresh_token'),
+    accessToken: text('access_token'),
 });
 
 export const insertSessionSchema = createInsertSchema(sessionTable);

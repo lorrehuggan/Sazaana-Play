@@ -1,7 +1,6 @@
+import { auth, validateRequest } from '../auth';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-
-import { auth, validateRequest } from '../auth';
 
 interface ActionResult {
     error: string | null;

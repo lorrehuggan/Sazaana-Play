@@ -1,11 +1,10 @@
+import { dbAdapter } from '../db';
+import { env } from '../env/server';
 import type { SpotifyUser } from '@/types';
 import { Spotify, generateCodeVerifier, generateState } from 'arctic';
 import { Lucia, type Session, type User } from 'lucia';
 import { cookies } from 'next/headers';
 import { cache } from 'react';
-
-import { dbAdapter } from '../db';
-import { env } from '../env/server';
 
 export const spotify = new Spotify(
     env.SPOTIFY_CLIENT_ID,
@@ -36,6 +35,8 @@ export const auth = new Lucia(dbAdapter, {
         return {
             id: session.id,
             userId: session.userId,
+            accessToken: session.accessToken,
+            refreshToken: session.refreshToken,
         };
     },
 });
@@ -44,7 +45,7 @@ export const validateRequest = cache(
     async (): Promise<
         { user: User; session: Session } | { user: null; session: null }
     > => {
-        const sessionId = cookies().get(auth.sessionCookieName)?.value ?? null;
+        const sessionId = cookies().get(auth.sessionCookieName)?.value;
 
         if (!sessionId) {
             return {
@@ -54,18 +55,21 @@ export const validateRequest = cache(
         }
 
         const result = await auth.validateSession(sessionId);
+
         // next.js throws when you attempt to set cookie when rendering page
         try {
             if (result.session && result.session.fresh) {
                 const sessionCookie = auth.createSessionCookie(
                     result.session.id,
                 );
+
                 cookies().set(
                     sessionCookie.name,
                     sessionCookie.value,
                     sessionCookie.attributes,
                 );
             }
+
             if (!result.session) {
                 const sessionCookie = auth.createBlankSessionCookie();
                 cookies().set(
@@ -82,7 +86,7 @@ export const validateRequest = cache(
     },
 );
 
-export const validatSession = async () => {
+export const validateSession = async () => {
     const { session } = await validateRequest();
 
     if (!session) {

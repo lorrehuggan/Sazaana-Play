@@ -23,9 +23,8 @@ export async function GET(request: Request): Promise<Response> {
     }
 
     try {
-        const sessionId = generateId(16);
-
         const tokens = await spotify.validateAuthorizationCode(code);
+        const sessionId = generateId(28);
 
         const spotifyUserResponse = await fetch(
             'https://api.spotify.com/v1/me',
@@ -54,6 +53,8 @@ export async function GET(request: Request): Promise<Response> {
                     fresh: tokens.accessTokenExpiresAt < new Date(),
                     expiresAt: new Date(tokens.accessTokenExpiresAt),
                     userEmail: spotifyUser.email ?? '',
+                    accessToken: tokens.accessToken,
+                    refreshToken: tokens.refreshToken,
                 },
                 {
                     sessionId: sessionId,
@@ -92,6 +93,8 @@ export async function GET(request: Request): Promise<Response> {
                 fresh: tokens.accessTokenExpiresAt < new Date(),
                 expiresAt: new Date(tokens.accessTokenExpiresAt),
                 userEmail: spotifyUser.email ?? '',
+                accessToken: tokens.accessToken,
+                refreshToken: tokens.refreshToken,
             },
             {
                 sessionId: sessionId,
