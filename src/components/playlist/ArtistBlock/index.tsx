@@ -14,11 +14,11 @@ export default function ArtistBlock({ artist, playlistHref }: Props) {
       <div className="h-full w-full relative rounded-lg overflow-hidden">
         {artist.items[0].images[0].url && (
           <Image
-            objectFit="cover"
             fill
             src={artist.items[0].images[0].url}
             alt="current artist"
-            className="object-cover grayscale"
+            className="object-cover "
+            sizes=""
           />
         )}
       </div>

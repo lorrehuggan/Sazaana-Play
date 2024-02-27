@@ -1,7 +1,7 @@
 import { auth, spotify } from '@/lib/auth';
 import { db } from '@/lib/db';
-import { User, userTable } from '@/lib/db/schema/user';
-import { SpotifyUser } from '@/types';
+import { userTable } from '@/lib/db/schema/user';
+import type { SpotifyUser } from '@/types';
 import { OAuth2RequestError } from 'arctic';
 import { eq } from 'drizzle-orm';
 import { generateId } from 'lucia';

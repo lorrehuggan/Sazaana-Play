@@ -10,7 +10,10 @@ type Props = {
 export default function ResultBlock({ artist }: Props) {
   return (
     <div className="col-span-3 rounded-lg border-[1px] border-muted-foreground p-8 overflow-hidden">
-      <ScrollArea className="h-[308px] w-full ">
+      <h3 className="text-2xl font-bold tracking-tighter">
+        Related Results:
+      </h3>
+      <ScrollArea className="h-[280px] w-full ">
         {artist.items.slice(1, artist.items.length).map((item) => {
           if (
             !item.images[2] ||

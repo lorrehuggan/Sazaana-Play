@@ -1,3 +1,6 @@
+import { userTable } from '@/lib/db/schema/user';
+import { z } from 'zod';
+
 declare module 'lucia' {
     interface Register {
         Lucia: typeof auth;

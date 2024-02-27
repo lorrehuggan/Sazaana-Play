@@ -1,6 +1,5 @@
 import { dbAdapter } from '../db';
 import { env } from '../env/server';
-import type { SpotifyUser } from '@/types';
 import { Spotify, generateCodeVerifier, generateState } from 'arctic';
 import { Lucia, type Session, type User } from 'lucia';
 import { cookies } from 'next/headers';
