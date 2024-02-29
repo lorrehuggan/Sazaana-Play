@@ -33,6 +33,10 @@ export default function FilterForm() {
                 min: 'min_energy',
                 max: 'max_energy',
             },
+            attributes: {
+                low: 'Chill Vibes Only',
+                high: 'Electrify the Night',
+            },
         },
         {
             name: 'danceability',
@@ -44,9 +48,13 @@ export default function FilterForm() {
                 min: 'min_danceability',
                 max: 'max_danceability',
             },
+            attributes: {
+                low: 'Two Left Fee',
+                high: 'Dancing Queen',
+            },
         },
         {
-            name: 'valence',
+            name: 'valence (mood)',
             min: 0,
             max: 1,
             step: 0.1,
@@ -54,6 +62,10 @@ export default function FilterForm() {
             value: {
                 min: 'min_valence',
                 max: 'max_valence',
+            },
+            attributes: {
+                low: 'Rainy Day Blues',
+                high: 'Sunshine and Rainbows',
             },
         },
         {
@@ -66,6 +78,10 @@ export default function FilterForm() {
                 min: 'min_tempo',
                 max: 'max_tempo',
             },
+            attributes: {
+                low: 'Slow-Mo Mode',
+                high: 'Speed Demon Beats',
+            },
         },
         {
             name: 'acousticness',
@@ -76,6 +92,10 @@ export default function FilterForm() {
             value: {
                 min: 'min_acousticness',
                 max: 'max_acousticness',
+            },
+            attributes: {
+                low: 'Synthetic Symphony',
+                high: 'Unplugged',
             },
         },
     ];
@@ -133,8 +153,8 @@ export default function FilterForm() {
                             />
                         </fieldset>
                         <div className="flex items-center gap-4 justify-between text-xs mt-1 text-muted-foreground">
-                            <p>Low</p>
-                            <p>High</p>
+                            <p>{item.attributes.low}</p>
+                            <p>{item.attributes.high}</p>
                         </div>
                         <Separator className="bg-foreground" />
                     </>
