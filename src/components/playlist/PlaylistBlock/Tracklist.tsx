@@ -40,9 +40,16 @@ export default function Tracklist({ playlist }: Props) {
               />
             </div>
             <div className="flex-1">
-              <p className="text-sm font-bold line-clamp-1">
-                {track.name}
-              </p>
+              <div className="flex items-center gap-1">
+                {track.explicit && (
+                  <div className="flex justify-center items-center text-center rounded font-medium text-primary text-xs min-h-4 min-w-4 bg-secondary ">
+                    E
+                  </div>
+                )}
+                <p className="text-sm font-bold line-clamp-1">
+                  {track.name}
+                </p>
+              </div>
               <div className="flex items-center line-clamp-1 gap-1">
                 {track.artists.map((artist) => {
                   return (
