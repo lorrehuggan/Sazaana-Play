@@ -39,12 +39,8 @@ export default function SaveTrackilstForm({ playlist }: Props) {
   const onSubmit: SubmitHandler<{
     title: string;
   }> = async (data) => {
-    console.log({
-      title: data.title,
-      ids,
-    });
     try {
-      const response = await fetch('/api/save', {
+      const response = fetch('/api/save', {
         method: 'POST',
         body: JSON.stringify({
           title: data.title,
@@ -54,10 +50,21 @@ export default function SaveTrackilstForm({ playlist }: Props) {
           'Content-Type': 'application/json',
         },
       });
-      const json = await response.json();
-      toast.success('Playlist saved to Spotify', {
-        duration: 3000,
+      toast.promise(response, {
+        success: 'Playlist saved to Spotify',
+        error: 'Error saving playlist',
         position: 'bottom-center',
+        closeButton: true,
+        duration: 9000,
+        loading: 'Saving playlist...',
+        action: {
+          label: 'Open Spotify',
+          onClick: () => {
+            window.open(
+              'https://open.spotify.com/collection/playlists',
+            );
+          },
+        },
       });
       form.reset();
     } catch (error) {
