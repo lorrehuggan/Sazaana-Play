@@ -9,6 +9,20 @@ declare module 'lucia' {
     }
 }
 
+export interface SearchParams {
+    seed_artists: string;
+    min_energy: string;
+    max_energy: string;
+    min_danceability: string;
+    max_danceability: string;
+    min_valence: string;
+    max_valence: string;
+    min_tempo: string;
+    max_tempo: string;
+    min_acousticness: string;
+    max_acousticness: string;
+}
+
 export interface Session {
     id: string;
     userId: string;

@@ -5200,3 +5200,799 @@ export const mockdata = [
     uri: "spotify:track:7cXlDCmulkI5UWLCtSjhRF"
   }
 ]
+
+export const mockArtist = {
+  href: "https://api.spotify.com/v1/search?query=50+cent&type=artist&locale=*&offset=0&limit=24",
+  items: [
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/3q7HBObVc0L8jNeTe5Gofh"
+      },
+      followers: {
+        href: null,
+        total: 13583979
+      },
+      genres: [
+        "east coast hip hop",
+        "gangster rap",
+        "hip hop",
+        "pop rap",
+        "queens hip hop",
+        "rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/3q7HBObVc0L8jNeTe5Gofh",
+      id: "3q7HBObVc0L8jNeTe5Gofh",
+      images: [
+        {
+          height: 977,
+          url: "https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2",
+          width: 781
+        },
+        {
+          height: 801,
+          url: "https://i.scdn.co/image/6f0da41419b31d9d2ba55d2df212f59ad0668118",
+          width: 640
+        },
+        {
+          height: 250,
+          url: "https://i.scdn.co/image/df73c0cebe56cafe705ffdba5085ccbd5680bd16",
+          width: 200
+        },
+        {
+          height: 80,
+          url: "https://i.scdn.co/image/1a44043542c997ef835c89e185f0cf79d7402153",
+          width: 64
+        }
+      ],
+      name: "50 Cent",
+      popularity: 83,
+      type: "artist",
+      uri: "spotify:artist:3q7HBObVc0L8jNeTe5Gofh"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/1ZwdS5xdxEREPySFridCfh"
+      },
+      followers: {
+        href: null,
+        total: 17096950
+      },
+      genres: [
+        "g funk",
+        "gangster rap",
+        "hip hop",
+        "rap",
+        "west coast rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/1ZwdS5xdxEREPySFridCfh",
+      id: "1ZwdS5xdxEREPySFridCfh",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eb7f5cc432c9c109248ebec1ac",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab676161000051747f5cc432c9c109248ebec1ac",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f1787f5cc432c9c109248ebec1ac",
+          width: 160
+        }
+      ],
+      name: "2Pac",
+      popularity: 78,
+      type: "artist",
+      uri: "spotify:artist:1ZwdS5xdxEREPySFridCfh"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/6DPYiyq5kWVQS4RGwxzPC7"
+      },
+      followers: {
+        href: null,
+        total: 11175599
+      },
+      genres: [
+        "g funk",
+        "gangster rap",
+        "hip hop",
+        "rap",
+        "west coast rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/6DPYiyq5kWVQS4RGwxzPC7",
+      id: "6DPYiyq5kWVQS4RGwxzPC7",
+      images: [
+        {
+          height: 1005,
+          url: "https://i.scdn.co/image/83d2489cade1dadcdc533ddbcd74993d0ca6d4cb",
+          width: 1000
+        },
+        {
+          height: 643,
+          url: "https://i.scdn.co/image/170254ebdd747f4e7045df1cae8f11a42dc1a547",
+          width: 640
+        },
+        {
+          height: 201,
+          url: "https://i.scdn.co/image/dd4a7102c5e1897bab2b1fa4bbc086fbe2fc87dc",
+          width: 200
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/85ebf2f6c52139b3384b596063678b47ab0fcb95",
+          width: 64
+        }
+      ],
+      name: "Dr. Dre",
+      popularity: 79,
+      type: "artist",
+      uri: "spotify:artist:6DPYiyq5kWVQS4RGwxzPC7"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/5me0Irg2ANcsgc93uaYrpb"
+      },
+      followers: {
+        href: null,
+        total: 9765692
+      },
+      genres: [
+        "east coast hip hop",
+        "gangster rap",
+        "hardcore hip hop",
+        "hip hop",
+        "rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/5me0Irg2ANcsgc93uaYrpb",
+      id: "5me0Irg2ANcsgc93uaYrpb",
+      images: [
+        {
+          height: 1250,
+          url: "https://i.scdn.co/image/1b4858fbd24046a81cace5ee18d19c868262b91f",
+          width: 1000
+        },
+        {
+          height: 800,
+          url: "https://i.scdn.co/image/9bb42de208edcb69653a8e7951fa93b13f598cdd",
+          width: 640
+        },
+        {
+          height: 250,
+          url: "https://i.scdn.co/image/e56612ae56c9007e99ab36b83efd4faf6401260d",
+          width: 200
+        },
+        {
+          height: 80,
+          url: "https://i.scdn.co/image/fc074d287739cca12a89c76fd338ff7d4aa4acee",
+          width: 64
+        }
+      ],
+      name: "The Notorious B.I.G.",
+      popularity: 76,
+      type: "artist",
+      uri: "spotify:artist:5me0Irg2ANcsgc93uaYrpb"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/7hJcb9fa4alzcOq3EaNPoG"
+      },
+      followers: {
+        href: null,
+        total: 11033861
+      },
+      genres: [
+        "g funk",
+        "gangster rap",
+        "hip hop",
+        "pop rap",
+        "rap",
+        "west coast rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/7hJcb9fa4alzcOq3EaNPoG",
+      id: "7hJcb9fa4alzcOq3EaNPoG",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eb9a398209a4ef3360dce2dec4",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab676161000051749a398209a4ef3360dce2dec4",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f1789a398209a4ef3360dce2dec4",
+          width: 160
+        }
+      ],
+      name: "Snoop Dogg",
+      popularity: 81,
+      type: "artist",
+      uri: "spotify:artist:7hJcb9fa4alzcOq3EaNPoG"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/6evKD5JWJON3qPBJtUEmtY"
+      },
+      followers: {
+        href: null,
+        total: 2361212
+      },
+      genres: [
+        "detroit hip hop",
+        "gangster rap",
+        "hardcore hip hop",
+        "hip hop",
+        "nyc rap",
+        "pop rap",
+        "queens hip hop",
+        "rap",
+        "southern hip hop"
+      ],
+      href: "https://api.spotify.com/v1/artists/6evKD5JWJON3qPBJtUEmtY",
+      id: "6evKD5JWJON3qPBJtUEmtY",
+      images: [
+        {
+          height: 1000,
+          url: "https://i.scdn.co/image/a668bc3f083377ca8889e9f8273c752e0342c4e0",
+          width: 1000
+        },
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/883505d6cbdbbb54837b345a84722dc78764ab67",
+          width: 640
+        },
+        {
+          height: 200,
+          url: "https://i.scdn.co/image/9f44104fb873364b96ae5110f6a3959ba173f8e2",
+          width: 200
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/2bdf7edfdd1e4704729662421a69edefa0481ec7",
+          width: 64
+        }
+      ],
+      name: "G-Unit",
+      popularity: 62,
+      type: "artist",
+      uri: "spotify:artist:6evKD5JWJON3qPBJtUEmtY"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/0NbfKEOTQCcwd6o7wSDOHI"
+      },
+      followers: {
+        href: null,
+        total: 4729357
+      },
+      genres: [
+        "detroit hip hop",
+        "gangster rap",
+        "hip hop",
+        "pop rap",
+        "rap",
+        "southern hip hop",
+        "trap"
+      ],
+      href: "https://api.spotify.com/v1/artists/0NbfKEOTQCcwd6o7wSDOHI",
+      id: "0NbfKEOTQCcwd6o7wSDOHI",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eba657aa5506945d264e147244",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab67616100005174a657aa5506945d264e147244",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f178a657aa5506945d264e147244",
+          width: 160
+        }
+      ],
+      name: "The Game",
+      popularity: 71,
+      type: "artist",
+      uri: "spotify:artist:0NbfKEOTQCcwd6o7wSDOHI"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/3Mcii5XWf6E0lrY3Uky4cA"
+      },
+      followers: {
+        href: null,
+        total: 8056323
+      },
+      genres: [
+        "conscious hip hop",
+        "g funk",
+        "gangster rap",
+        "hip hop",
+        "rap",
+        "west coast rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/3Mcii5XWf6E0lrY3Uky4cA",
+      id: "3Mcii5XWf6E0lrY3Uky4cA",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eb650e79afafd00492e33d7b8c",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab67616100005174650e79afafd00492e33d7b8c",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f178650e79afafd00492e33d7b8c",
+          width: 160
+        }
+      ],
+      name: "Ice Cube",
+      popularity: 73,
+      type: "artist",
+      uri: "spotify:artist:3Mcii5XWf6E0lrY3Uky4cA"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/55Aa2cqylxrFIXC767Z865"
+      },
+      followers: {
+        href: null,
+        total: 14096623
+      },
+      genres: [
+        "hip hop",
+        "new orleans rap",
+        "pop rap",
+        "rap",
+        "trap"
+      ],
+      href: "https://api.spotify.com/v1/artists/55Aa2cqylxrFIXC767Z865",
+      id: "55Aa2cqylxrFIXC767Z865",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5ebc1c08e541eae3cc82c6988c4",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab67616100005174c1c08e541eae3cc82c6988c4",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f178c1c08e541eae3cc82c6988c4",
+          width: 160
+        }
+      ],
+      name: "Lil Wayne",
+      popularity: 85,
+      type: "artist",
+      uri: "spotify:artist:55Aa2cqylxrFIXC767Z865"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/3nFkdlSjzX9mRTtwJOzDYB"
+      },
+      followers: {
+        href: null,
+        total: 8786558
+      },
+      genres: [
+        "east coast hip hop",
+        "gangster rap",
+        "hip hop",
+        "pop rap",
+        "rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/3nFkdlSjzX9mRTtwJOzDYB",
+      id: "3nFkdlSjzX9mRTtwJOzDYB",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5ebc75afcd5a9027f60eaebb5e4",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab67616100005174c75afcd5a9027f60eaebb5e4",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f178c75afcd5a9027f60eaebb5e4",
+          width: 160
+        }
+      ],
+      name: "JAY-Z",
+      popularity: 83,
+      type: "artist",
+      uri: "spotify:artist:3nFkdlSjzX9mRTtwJOzDYB"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/20qISvAhX20dpIbOOzGK3q"
+      },
+      followers: {
+        href: null,
+        total: 3581906
+      },
+      genres: [
+        "conscious hip hop",
+        "east coast hip hop",
+        "gangster rap",
+        "hardcore hip hop",
+        "hip hop",
+        "queens hip hop",
+        "rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/20qISvAhX20dpIbOOzGK3q",
+      id: "20qISvAhX20dpIbOOzGK3q",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eb153198caeef9e3bda92f9285",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab67616100005174153198caeef9e3bda92f9285",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f178153198caeef9e3bda92f9285",
+          width: 160
+        }
+      ],
+      name: "Nas",
+      popularity: 72,
+      type: "artist",
+      uri: "spotify:artist:20qISvAhX20dpIbOOzGK3q"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/0eDvMgVFoNV3TpwtrVCoTj"
+      },
+      followers: {
+        href: null,
+        total: 13734138
+      },
+      genres: [
+        "brooklyn drill",
+        "rap"
+      ],
+      href: "https://api.spotify.com/v1/artists/0eDvMgVFoNV3TpwtrVCoTj",
+      id: "0eDvMgVFoNV3TpwtrVCoTj",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eb597f9edd2cd1a892d4412b09",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab67616100005174597f9edd2cd1a892d4412b09",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f178597f9edd2cd1a892d4412b09",
+          width: 160
+        }
+      ],
+      name: "Pop Smoke",
+      popularity: 80,
+      type: "artist",
+      uri: "spotify:artist:0eDvMgVFoNV3TpwtrVCoTj"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/1nOmDT1QjP6KazkR1taKFq"
+      },
+      followers: {
+        href: null,
+        total: 27373
+      },
+      genres: [
+        "queens hip hop"
+      ],
+      href: "https://api.spotify.com/v1/artists/1nOmDT1QjP6KazkR1taKFq",
+      id: "1nOmDT1QjP6KazkR1taKFq",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab67616d0000b273c2a4fd84a3944d4100e4b87e",
+          width: 640
+        },
+        {
+          height: 300,
+          url: "https://i.scdn.co/image/ab67616d00001e02c2a4fd84a3944d4100e4b87e",
+          width: 300
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/ab67616d00004851c2a4fd84a3944d4100e4b87e",
+          width: 64
+        }
+      ],
+      name: "50 Cent, DJ Whoo Kid",
+      popularity: 37,
+      type: "artist",
+      uri: "spotify:artist:1nOmDT1QjP6KazkR1taKFq"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/5NQ5qUcodknlisUdKt89gx"
+      },
+      followers: {
+        href: null,
+        total: 1062
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/5NQ5qUcodknlisUdKt89gx",
+      id: "5NQ5qUcodknlisUdKt89gx",
+      images: [],
+      name: "Notorious B.I.G. & 50 Cent",
+      popularity: 22,
+      type: "artist",
+      uri: "spotify:artist:5NQ5qUcodknlisUdKt89gx"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/1jW4SwM0j7U8CHhc2jap6a"
+      },
+      followers: {
+        href: null,
+        total: 5828
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/1jW4SwM0j7U8CHhc2jap6a",
+      id: "1jW4SwM0j7U8CHhc2jap6a",
+      images: [],
+      name: "Nas, 50 Cent, & Nature",
+      popularity: 18,
+      type: "artist",
+      uri: "spotify:artist:1jW4SwM0j7U8CHhc2jap6a"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/10E2vMBQHPNlyH9MB1uaKO"
+      },
+      followers: {
+        href: null,
+        total: 270
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/10E2vMBQHPNlyH9MB1uaKO",
+      id: "10E2vMBQHPNlyH9MB1uaKO",
+      images: [],
+      name: "YOUNG BUCK, 50 CENT",
+      popularity: 0,
+      type: "artist",
+      uri: "spotify:artist:10E2vMBQHPNlyH9MB1uaKO"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/0Hj9R00ps6IozApFYZsga2"
+      },
+      followers: {
+        href: null,
+        total: 228
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/0Hj9R00ps6IozApFYZsga2",
+      id: "0Hj9R00ps6IozApFYZsga2",
+      images: [],
+      name: "50 Cent, Tony Yayo, Olivia, Lloyd Banks",
+      popularity: 0,
+      type: "artist",
+      uri: "spotify:artist:0Hj9R00ps6IozApFYZsga2"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/73yV7A6orVb26P5j5yzFVO"
+      },
+      followers: {
+        href: null,
+        total: 2958
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/73yV7A6orVb26P5j5yzFVO",
+      id: "73yV7A6orVb26P5j5yzFVO",
+      images: [],
+      name: "50 cent, Snoop Dogg, 2 pac, the game, san quinn",
+      popularity: 2,
+      type: "artist",
+      uri: "spotify:artist:73yV7A6orVb26P5j5yzFVO"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/3upFIVmeDn8Z9pgop6YcAY"
+      },
+      followers: {
+        href: null,
+        total: 84
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/3upFIVmeDn8Z9pgop6YcAY",
+      id: "3upFIVmeDn8Z9pgop6YcAY",
+      images: [],
+      name: "Pretty Ugly, P-Dap & 50 Cent",
+      popularity: 0,
+      type: "artist",
+      uri: "spotify:artist:3upFIVmeDn8Z9pgop6YcAY"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/12RXj9t2WMR1ZypNZBtWW0"
+      },
+      followers: {
+        href: null,
+        total: 44
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/12RXj9t2WMR1ZypNZBtWW0",
+      id: "12RXj9t2WMR1ZypNZBtWW0",
+      images: [],
+      name: "50 Cent & Keith Murray",
+      popularity: 2,
+      type: "artist",
+      uri: "spotify:artist:12RXj9t2WMR1ZypNZBtWW0"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/22yVG54RxQXPqfqaxxPWj9"
+      },
+      followers: {
+        href: null,
+        total: 26
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/22yVG54RxQXPqfqaxxPWj9",
+      id: "22yVG54RxQXPqfqaxxPWj9",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab6761610000e5eb3fe3181edaf58216b49902c1",
+          width: 640
+        },
+        {
+          height: 320,
+          url: "https://i.scdn.co/image/ab676161000051743fe3181edaf58216b49902c1",
+          width: 320
+        },
+        {
+          height: 160,
+          url: "https://i.scdn.co/image/ab6761610000f1783fe3181edaf58216b49902c1",
+          width: 160
+        }
+      ],
+      name: "50 cent Drinquenti",
+      popularity: 0,
+      type: "artist",
+      uri: "spotify:artist:22yVG54RxQXPqfqaxxPWj9"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/3i1FAiigT0s9lzi0GUtd8C"
+      },
+      followers: {
+        href: null,
+        total: 53
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/3i1FAiigT0s9lzi0GUtd8C",
+      id: "3i1FAiigT0s9lzi0GUtd8C",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab67616d0000b2731f6dc1a4e922153b8988a28f",
+          width: 640
+        },
+        {
+          height: 300,
+          url: "https://i.scdn.co/image/ab67616d00001e021f6dc1a4e922153b8988a28f",
+          width: 300
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/ab67616d000048511f6dc1a4e922153b8988a28f",
+          width: 64
+        }
+      ],
+      name: "50 Cent Bin",
+      popularity: 0,
+      type: "artist",
+      uri: "spotify:artist:3i1FAiigT0s9lzi0GUtd8C"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/44D8GJnGdZRdff3r9EZWDI"
+      },
+      followers: {
+        href: null,
+        total: 206
+      },
+      genres: [],
+      href: "https://api.spotify.com/v1/artists/44D8GJnGdZRdff3r9EZWDI",
+      id: "44D8GJnGdZRdff3r9EZWDI",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab67616d0000b273e2ae26ae73f1fd661b22a043",
+          width: 640
+        },
+        {
+          height: 300,
+          url: "https://i.scdn.co/image/ab67616d00001e02e2ae26ae73f1fd661b22a043",
+          width: 300
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/ab67616d00004851e2ae26ae73f1fd661b22a043",
+          width: 64
+        }
+      ],
+      name: "50 Cent Haircut",
+      popularity: 0,
+      type: "artist",
+      uri: "spotify:artist:44D8GJnGdZRdff3r9EZWDI"
+    },
+    {
+      external_urls: {
+        spotify: "https://open.spotify.com/artist/7ymWW9uUH6R83DhTzVzsK2"
+      },
+      followers: {
+        href: null,
+        total: 1093
+      },
+      genres: [
+        "experimental dubstep",
+        "fake"
+      ],
+      href: "https://api.spotify.com/v1/artists/7ymWW9uUH6R83DhTzVzsK2",
+      id: "7ymWW9uUH6R83DhTzVzsK2",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab67616d0000b273073e18e5bb3439c8faaca32c",
+          width: 640
+        },
+        {
+          height: 300,
+          url: "https://i.scdn.co/image/ab67616d00001e02073e18e5bb3439c8faaca32c",
+          width: 300
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/ab67616d00004851073e18e5bb3439c8faaca32c",
+          width: 64
+        }
+      ],
+      name: "Candy Shop",
+      popularity: 2,
+      type: "artist",
+      uri: "spotify:artist:7ymWW9uUH6R83DhTzVzsK2"
+    }
+  ],
+  limit: 24,
+  next: "https://api.spotify.com/v1/search?query=50+cent&type=artist&locale=*&offset=24&limit=24",
+  offset: 0,
+  previous: null,
+  total: 46
+}

@@ -15,7 +15,6 @@ type FormState = {
 };
 
 export async function submitSearchAction(prev: FormState, data: FormData) {
-  console.log({ prev });
   const formData = Object.fromEntries(data);
   const parsed = submitSearchSchema.safeParse(formData);
 

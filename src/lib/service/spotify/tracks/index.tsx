@@ -1,5 +1,5 @@
 import { mockdata } from '@/lib/mock';
-import { Recommendations } from '@/types';
+import { Recommendations, Track } from '@/types';
 
 type SearchParams = {
     seed_artists: string;
@@ -42,5 +42,5 @@ export async function SpotifyCreatePlaylist(
     // const data = await reponse.json();
     // const recommendations = data as Recommendations;
     // return recommendations.tracks;
-    return mockdata;
+    return mockdata as Track[];
 }

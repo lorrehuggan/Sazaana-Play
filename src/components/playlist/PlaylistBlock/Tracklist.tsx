@@ -7,8 +7,15 @@ type Props = {
 };
 
 export default function Tracklist({ playlist }: Props) {
+  if (playlist.length === 0) {
+    return (
+      <div className="col-span-2 p-8 bg-red-400 text-background rounded-lg space-y-2">
+        <p className="text-center font-bold">No tracks found.</p>
+      </div>
+    );
+  }
   return (
-    <div className=" col-span-2 p-8 bg-foreground text-background rounded-lg space-y-2">
+    <div className="col-span-2 p-8 bg-foreground text-background rounded-lg space-y-2">
       {playlist.map((track) => {
         if (
           !track.album.images[1] ||
@@ -50,9 +57,16 @@ export default function Tracklist({ playlist }: Props) {
                 })}
               </div>
             </div>
-            <p className="flex-1 line-clamp-1	font-medium text-sm">
-              {track.album.name}
-            </p>
+            <div className="flex-1">
+              <p className="line-clamp-1	font-medium text-sm">
+                {track.album.name}
+              </p>
+              <div className="flex items-center line-clamp-1 gap-1">
+                <span className="text-xs line-clamp-1">
+                  {track.album.total_tracks}
+                </span>
+              </div>
+            </div>
           </div>
         );
       })}

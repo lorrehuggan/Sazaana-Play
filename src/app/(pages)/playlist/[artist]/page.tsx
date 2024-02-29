@@ -6,25 +6,13 @@ import { BASE_PATH, env } from '@/lib/env/server';
 import { getAccessToken } from '@/lib/service/auth';
 import { SpotifySearchArtist } from '@/lib/service/spotify/artist';
 import { SpotifyCreatePlaylist } from '@/lib/service/spotify/tracks';
-import { Track } from '@/types';
+import type { SearchParams, Track } from '@/types';
 
 type Props = {
     params: {
         artist: string;
     };
-    searchParams: {
-        seed_artists: string;
-        min_energy: string;
-        max_energy: string;
-        min_danceability: string;
-        max_danceability: string;
-        min_valence: string;
-        max_valence: string;
-        min_tempo: string;
-        max_tempo: string;
-        min_acousticness: string;
-        max_acousticness: string;
-    };
+    searchParams: SearchParams;
 };
 
 export default async function Page({ params, searchParams }: Props) {
@@ -45,21 +33,30 @@ export default async function Page({ params, searchParams }: Props) {
     const url = new URL(`${BASE_PATH}/playlist/${params.artist}`);
 
     url.searchParams.set('seed_artists', artist.items[0].id);
+    url.searchParams.set('min_energy', '0');
+    url.searchParams.set('max_energy', '1');
+    url.searchParams.set('min_danceability', '0');
+    url.searchParams.set('max_danceability', '1');
+    url.searchParams.set('min_valence', '0');
+    url.searchParams.set('max_valence', '1');
+    url.searchParams.set('min_tempo', '0');
+    url.searchParams.set('max_tempo', '200');
+    url.searchParams.set('min_acousticness', '0');
+    url.searchParams.set('max_acousticness', '1');
 
     return (
         <>
-            {JSON.stringify(playlist)}
             <div className="mx-auto mt-4 w-11/12 max-w-5xl grid grid-cols-5 gap-4 h-[380px]">
                 <ArtistBlock artist={artist} playlistHref={url.toString()} />
                 <ResultBlock artist={artist} />
             </div>
             {searchParams.seed_artists && (
                 <div className="mx-auto mt-4 w-11/12 max-w-5xl grid grid-cols-3 gap-4 min-h-[580px] mb-16">
-                    <PlaylistBlock
-                        searchParams={searchParams}
+                    <PlaylistBlock playlist={playlist} />
+                    <FilterBlock
                         playlist={playlist}
+                        seed={searchParams.seed_artists}
                     />
-                    <FilterBlock seed={searchParams.seed_artists} />
                 </div>
             )}
         </>

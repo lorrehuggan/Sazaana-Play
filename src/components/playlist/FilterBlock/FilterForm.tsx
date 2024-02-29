@@ -2,76 +2,114 @@
 
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
-
-const data = [
-    {
-        name: 'energy',
-        min: 0,
-        max: 1,
-        step: 0.1,
-        value: {
-            min: 'min_energy',
-            max: 'max_energy',
-        },
-    },
-    {
-        name: 'danceability',
-        min: 0,
-        max: 1,
-        step: 0.1,
-        value: {
-            min: 'min_danceability',
-            max: 'max_danceability',
-        },
-    },
-    {
-        name: 'valence',
-        min: 0,
-        max: 1,
-        step: 0.1,
-        value: {
-            min: 'min_valence',
-            max: 'max_valence',
-        },
-    },
-    {
-        name: 'tempo',
-        min: 0,
-        max: 200,
-        step: 1,
-        value: {
-            min: 'min_tempo',
-            max: 'max_tempo',
-        },
-    },
-    {
-        name: 'acousticness',
-        min: 0,
-        max: 1,
-        step: 0.1,
-        value: {
-            min: 'min_acousticness',
-            max: 'max_acousticness',
-        },
-    },
-];
+import type { Track } from '@/types';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export default function FilterForm() {
-    const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
+    const router = useRouter();
 
-    const seed = searchParams.get('seed_artists');
+    const seed_artist = searchParams.get('seed_artists');
+    const min_energy = Number(searchParams.get('min_energy'));
+    const max_energy = Number(searchParams.get('max_energy'));
+    const min_danceability = Number(searchParams.get('min_danceability'));
+    const max_danceability = Number(searchParams.get('max_danceability'));
+    const min_valence = Number(searchParams.get('min_valence'));
+    const max_valence = Number(searchParams.get('max_valence'));
+    const min_tempo = Number(searchParams.get('min_tempo'));
+    const max_tempo = Number(searchParams.get('max_tempo'));
+    const min_acousticness = Number(searchParams.get('min_acousticness'));
+    const max_acousticness = Number(searchParams.get('max_acousticness'));
 
-    // const url = new URL(`${pathname}`);
+    const data = [
+        {
+            name: 'energy',
+            min: 0,
+            max: 1,
+            step: 0.1,
+            minSteps: 0.1,
+            value: {
+                min: 'min_energy',
+                max: 'max_energy',
+            },
+        },
+        {
+            name: 'danceability',
+            min: 0,
+            max: 1,
+            step: 0.1,
+            minSteps: 0.1,
+            value: {
+                min: 'min_danceability',
+                max: 'max_danceability',
+            },
+        },
+        {
+            name: 'valence',
+            min: 0,
+            max: 1,
+            step: 0.1,
+            minSteps: 0.1,
+            value: {
+                min: 'min_valence',
+                max: 'max_valence',
+            },
+        },
+        {
+            name: 'tempo',
+            min: 50,
+            max: 200,
+            step: 5,
+            minSteps: 5,
+            value: {
+                min: 'min_tempo',
+                max: 'max_tempo',
+            },
+        },
+        {
+            name: 'acousticness',
+            min: 0,
+            max: 1,
+            step: 0.1,
+            minSteps: 0.1,
+            value: {
+                min: 'min_acousticness',
+                max: 'max_acousticness',
+            },
+        },
+    ];
 
-    function filterAction(params: Record<string, number>) {}
+    const BASE_PATH = 'http://localhost:3000';
+
+    const url = new URL(`${BASE_PATH}${pathname}`);
+
+    function filterAction(params: Record<string, number>) {
+        url.searchParams.set('seed_artists', seed_artist ?? '');
+        url.searchParams.set('min_energy', min_energy.toString());
+        url.searchParams.set('max_energy', max_energy.toString());
+        url.searchParams.set('min_danceability', min_danceability.toString());
+        url.searchParams.set('max_danceability', max_danceability.toString());
+        url.searchParams.set('min_valence', min_valence.toString());
+        url.searchParams.set('max_valence', max_valence.toString());
+        url.searchParams.set('min_tempo', min_tempo.toString());
+        url.searchParams.set('max_tempo', max_tempo.toString());
+        url.searchParams.set('min_acousticness', min_acousticness.toString());
+        url.searchParams.set('max_acousticness', max_acousticness.toString());
+
+        for (const [key, value] of Object.entries(params)) {
+            url.searchParams.set(key, value.toString());
+        }
+
+        router.push(url.toString(), {
+            scroll: false,
+        });
+    }
 
     return (
-        <>
-            <p className="mb-2 font-bold">Filter</p>
-            <form className="space-y-4">
+        <div className="p-8 rounded-lg bg-secondary">
+            <h4 className="mb-2 font-bold text-xl">Filter Tracks</h4>
+            <form className="space-y-2">
                 {data.map((item) => (
                     <>
                         <fieldset key={item.name}>
@@ -79,23 +117,29 @@ export default function FilterForm() {
                                 {item.name}
                             </label>
                             <Slider
-                                minStepsBetweenThumbs={0.1}
+                                className="mt-2"
+                                minStepsBetweenThumbs={item.minSteps}
                                 onValueCommit={(value) =>
                                     filterAction({
                                         [item.value.min]: value[0],
                                         [item.value.max]: value[1],
                                     })
                                 }
+                                min={item.min}
                                 name={item.name}
                                 defaultValue={[item.min, item.max]}
                                 max={item.max}
                                 step={item.step}
                             />
                         </fieldset>
+                        <div className="flex items-center gap-4 justify-between text-xs mt-1 text-muted-foreground">
+                            <p>Low</p>
+                            <p>High</p>
+                        </div>
                         <Separator className="bg-foreground" />
                     </>
                 ))}
             </form>
-        </>
+        </div>
     );
 }
