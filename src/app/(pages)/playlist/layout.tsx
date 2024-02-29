@@ -16,7 +16,23 @@ export default async function Layout({
         <main>
             <Navigation session={session} />
             <SearchBlock />
-            {children}
+            <section className="min-h-[calc(100vh-25.5rem)]">
+                {children}
+            </section>
+            <div className="flex items-center justify-center gap-4 border-[1px] border-t-primary px-8 py-4">
+                <p className="text-muted-foreground text-xs">
+                    Built by{' '}
+                    <span>
+                        <a
+                            href="https://twitter.com/LorreHuggan"
+                            className="hover:text-primary transition duration-300 ease-out cursor-pointer"
+                        >
+                            Lorre Huggan
+                        </a>
+                    </span>{' '}
+                    with Love
+                </p>
+            </div>
         </main>
     );
 }
