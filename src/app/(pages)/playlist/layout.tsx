@@ -16,7 +16,7 @@ export default async function Layout({
         <main>
             <Navigation session={session} />
             <SearchBlock />
-            <section className="min-h-[calc(100vh-25.5rem)]">
+            <section className="min-h-[calc(100vh-22.5rem)]">
                 {children}
             </section>
             <div className="flex items-center justify-center gap-4 border-[1px] border-t-primary px-8 py-4">
