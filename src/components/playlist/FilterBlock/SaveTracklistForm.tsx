@@ -73,7 +73,7 @@ export default function SaveTrackilstForm({ playlist }: Props) {
   };
 
   return (
-    <div className="rounded-lg bg-green-500 p-8">
+    <div className="rounded-lg p-8">
       {/* <h4 className="font-bold text-xl mb-2">Save Playlist</h4> */}
       <Form {...form}>
         <form
@@ -98,7 +98,7 @@ export default function SaveTrackilstForm({ playlist }: Props) {
                     className="bg-background border-[1px] border-slate-900/30"
                   />
                 </FormControl>
-                <FormDescription className="text-white">
+                <FormDescription>
                   Enter a name for your playlist.
                 </FormDescription>
                 <FormMessage />
