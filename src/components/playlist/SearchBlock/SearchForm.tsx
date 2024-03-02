@@ -38,7 +38,7 @@ export default function SearchForm() {
         ref={formRef}
         action={formAction}
         onSubmit={form.handleSubmit(() => formRef.current?.submit())}
-        className="flex items-center gap-2 w-full mt-4"
+        className="mt-4 flex w-full items-center gap-2"
       >
         <FormField
           control={form.control}

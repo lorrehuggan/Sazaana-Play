@@ -10,8 +10,8 @@ type Props = {
 
 export default function ArtistBlock({ artist, playlistHref }: Props) {
   return (
-    <div className="col-span-2 rounded-lg bg-foreground relative">
-      <div className="h-full w-full relative rounded-lg overflow-hidden">
+    <div className="relative col-span-2 rounded-lg bg-foreground">
+      <div className="relative h-full w-full overflow-hidden rounded-lg">
         {artist.items[0].images[0].url && (
           <Image
             fill
@@ -22,13 +22,13 @@ export default function ArtistBlock({ artist, playlistHref }: Props) {
           />
         )}
       </div>
-      <div className="absolute top-8 left-8 bg-background rounded-md px-2">
-        <h4 className="font-bold tracking-tighter text-2xl">
+      <div className="absolute left-8 top-8 rounded-md bg-background px-2">
+        <h4 className="text-2xl font-bold tracking-tighter">
           {artist.items[0].name}
         </h4>
       </div>
       <Button
-        className="mt-4 absolute bottom-8 right-8"
+        className="absolute bottom-8 right-8 mt-4"
         variant="secondary"
         asChild
       >

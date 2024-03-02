@@ -42,7 +42,7 @@ export default function Navigation({ session }: Props) {
             <DropdownMenuItem>
               <form action={logout} className="w-full">
                 <Button
-                  className="w-full p-0 justify-start text-left text-sm"
+                  className="w-full justify-start p-0 text-left text-sm"
                   type="submit"
                   variant="ghost"
                 >
