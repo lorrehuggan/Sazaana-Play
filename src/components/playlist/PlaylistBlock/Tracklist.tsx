@@ -9,13 +9,19 @@ type Props = {
 export default function Tracklist({ playlist }: Props) {
   if (playlist.length === 0) {
     return (
-      <div className="col-span-2 p-8 bg-red-400 text-background rounded-lg space-y-2">
+      <div className="col-span-2 border-[1px] border-primary  p-8 rounded-lg space-y-2">
         <p className="text-center font-bold">No tracks found.</p>
       </div>
     );
   }
   return (
-    <div className="col-span-2 p-8 bg-foreground text-background rounded-lg space-y-2">
+    <div className="col-span-2 border-[1px] border-primary  p-8 rounded-lg space-y-2">
+      <div className="flex items-center justify-between">
+        <h4 className="font-bold text-xl mb-2">Playlist</h4>
+        <h5 className="text-muted-foreground text-xs">
+          {playlist.length} tracks
+        </h5>
+      </div>
       {playlist.map((track) => {
         if (
           !track.album.images[1] ||
@@ -42,8 +48,10 @@ export default function Tracklist({ playlist }: Props) {
             <div className="flex-1">
               <div className="flex items-center gap-1">
                 {track.explicit && (
-                  <div className="flex justify-center items-center text-center rounded font-medium text-primary text-xs min-h-4 min-w-4 bg-secondary ">
-                    E
+                  <div className="flex justify-center items-center rounded bg-lime-500 h-[16px] w-[16px]">
+                    <span className="leading-[1] font-medium text-white text-[10px]">
+                      E
+                    </span>
                   </div>
                 )}
                 <p className="text-sm font-bold line-clamp-1">
@@ -70,7 +78,7 @@ export default function Tracklist({ playlist }: Props) {
               </p>
               <div className="flex items-center line-clamp-1 gap-1">
                 <span className="text-xs line-clamp-1">
-                  {track.album.total_tracks}
+                  {track.album.release_date.split('-')[0]}
                 </span>
               </div>
             </div>
