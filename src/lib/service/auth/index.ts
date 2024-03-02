@@ -48,7 +48,7 @@ export async function getAccessToken() {
       .update(sessionTable)
       .set({
         accessToken: tokens.access_token,
-        expiresAt: expiresAt + tokens.expires_in,
+        expiresAt: expiresAt + tokens.expires_in * 1000,
       })
       .where(eq(sessionTable.id, session.id));
 

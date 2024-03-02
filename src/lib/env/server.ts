@@ -9,6 +9,7 @@ export const env = createEnv({
         SPOTIFY_CLIENT_SECRET: z.string(),
         LOCAL_DOMAIN: z.string().url(),
         PRODUCTION_DOMAIN: z.string().url(),
+        DATABASE_AUTH_TOKEN: z.string(),
     },
     experimental__runtimeEnv: {
         DATABASE_AUTH_TOKEN: process.env.DATABASE_AUTH_TOKEN,
