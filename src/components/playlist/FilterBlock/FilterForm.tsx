@@ -2,7 +2,6 @@
 
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
-import type { Track } from '@/types';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export default function FilterForm() {
@@ -127,12 +126,12 @@ export default function FilterForm() {
     }
 
     return (
-        <div className="p-8 rounded-lg bg-secondary">
+        <div className="p-8 rounded-lg border-[1px] border-primary">
             <h4 className="mb-2 font-bold text-xl">Filter Tracks</h4>
             <form className="space-y-2">
                 {data.map((item) => (
                     <>
-                        <fieldset key={item.name}>
+                        <fieldset key={item.value.min}>
                             <label className="uppercase text-xs">
                                 {item.name}
                             </label>
