@@ -56,13 +56,12 @@ export default function SearchForm() {
                     className="w-full"
                   />
                   <Button type="submit" variant="secondary">
-                    Submit
+                    Find Artist
                   </Button>
                 </div>
               </FormControl>
               <FormDescription>
-                Enter the name of the artist you want to build a
-                playlist around.
+                Build a playlist based on your favorite artist
               </FormDescription>
               <FormMessage />
             </FormItem>

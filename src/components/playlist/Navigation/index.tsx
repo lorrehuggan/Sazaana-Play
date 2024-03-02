@@ -24,7 +24,9 @@ type Props = {
 export default function Navigation({ session }: Props) {
   return (
     <div className="flex items-center justify-between gap-4 border-[1px] border-b-primary px-8 py-2">
-      <span className="text-md font-bold tracking-tighter">SAZAANA</span>
+      <span className="text-md pointer-events-none font-bold tracking-tighter">
+        SAZAANA
+      </span>
       <div className="flex items-center gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -37,10 +39,6 @@ export default function Navigation({ session }: Props) {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
-            {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
-            {/* <DropdownMenuSeparator /> */}
-            {/* <DropdownMenuGroup> */}
-            {/* </DropdownMenuGroup> */}
             <DropdownMenuItem>
               <form action={logout} className="w-full">
                 <Button

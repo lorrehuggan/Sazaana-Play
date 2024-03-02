@@ -9,7 +9,7 @@ type Props = {
 
 export default function ResultBlock({ artist }: Props) {
   return (
-    <div className="col-span-3 rounded-lg border-[1px] border-muted-foreground p-8 overflow-hidden">
+    <div className="col-span-3 rounded-lg border-[1px] border-primary p-8 overflow-hidden">
       <h3 className="text-2xl font-bold tracking-tighter">
         Related Results:
       </h3>

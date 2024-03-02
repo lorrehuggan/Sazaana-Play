@@ -1,12 +1,11 @@
 import ArtistBlock from '@/components/playlist/ArtistBlock';
-import FilterBlock from '@/components/playlist/FilterBlock';
-import PlaylistBlock from '@/components/playlist/PlaylistBlock';
 import ResultBlock from '@/components/playlist/ResultBlock';
-import { BASE_PATH, env } from '@/lib/env/server';
+import RowTwo from '@/components/playlist/RowTwo';
+import { BASE_PATH } from '@/lib/env/server';
 import { getAccessToken } from '@/lib/service/auth';
 import { SpotifySearchArtist } from '@/lib/service/spotify/artist';
-import { SpotifyCreatePlaylist } from '@/lib/service/spotify/tracks';
-import type { SearchParams, Track } from '@/types';
+import type { SearchParams } from '@/types';
+import { Suspense } from 'react';
 
 type Props = {
     params: {
@@ -23,12 +22,6 @@ export default async function Page({ params, searchParams }: Props) {
     const artist = await SpotifySearchArtist(params.artist.trim(), accessToken);
 
     if (!artist) return <div>Artist not found</div>;
-
-    let playlist = [] as Track[];
-
-    if (searchParams.seed_artists) {
-        playlist = await SpotifyCreatePlaylist(searchParams, accessToken);
-    }
 
     const url = new URL(`${BASE_PATH}/playlist/${params.artist}`);
 
@@ -51,13 +44,15 @@ export default async function Page({ params, searchParams }: Props) {
                 <ResultBlock artist={artist} />
             </div>
             {searchParams.seed_artists && (
-                <div className="mx-auto mt-4 w-11/12 max-w-5xl grid grid-cols-3 gap-4 min-h-[580px] mb-16">
-                    <PlaylistBlock playlist={playlist} />
-                    <FilterBlock
-                        playlist={playlist}
-                        seed={searchParams.seed_artists}
-                    />
-                </div>
+                <Suspense
+                    fallback={
+                        <div className="mx-auto mt-4 w-11/12 max-w-5xl">
+                            <h4 className="font-bold">Compiling Playlist...</h4>
+                        </div>
+                    }
+                >
+                    <RowTwo searchParams={searchParams} />
+                </Suspense>
             )}
         </>
     );
