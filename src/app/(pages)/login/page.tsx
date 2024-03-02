@@ -1,11 +1,10 @@
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Page() {
     return (
-        <div className="h-screen w-screen grid grid-cols-5">
+        <div className="h-screen w-screen grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-5">
             <div className="h-full flex justify-center items-center col-span-3">
                 <div className="w-11/12 max-w-sm mx-auto">
                     <h1 className="text-center text-4xl font-bold tracking-[-0.075rem] uppercase">
