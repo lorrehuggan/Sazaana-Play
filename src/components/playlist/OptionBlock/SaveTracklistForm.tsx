@@ -73,7 +73,7 @@ export default function SaveTrackilstForm({ playlist }: Props) {
   };
 
   return (
-    <div className="rounded-lg p-8">
+    <div className="rounded-lg border-[1px] border-foreground p-8">
       {/* <h4 className="font-bold text-xl mb-2">Save Playlist</h4> */}
       <Form {...form}>
         <form
@@ -87,7 +87,7 @@ export default function SaveTrackilstForm({ playlist }: Props) {
               <FormItem>
                 <FormLabel
                   htmlFor="title"
-                  className="font-bold text-xl mb-2"
+                  className="mb-2 text-xl font-bold"
                 >
                   Save Playlist
                 </FormLabel>
@@ -95,7 +95,7 @@ export default function SaveTrackilstForm({ playlist }: Props) {
                   <Input
                     {...field}
                     placeholder="Playlist Name"
-                    className="bg-background border-[1px] border-slate-900/30"
+                    className="border-[1px] border-slate-900/30 bg-background"
                   />
                 </FormControl>
                 <FormDescription>
@@ -107,9 +107,9 @@ export default function SaveTrackilstForm({ playlist }: Props) {
           />
           <Button
             disabled={form.formState.isSubmitting}
-            className="w-full flex gap-2 items-center"
+            className="flex w-full items-center gap-2"
           >
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <svg
                 className="fill-white"
                 width="24"

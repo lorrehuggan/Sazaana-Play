@@ -55,7 +55,7 @@ export default function SearchForm() {
                     placeholder="Taylor Swift"
                     className="w-full"
                   />
-                  <Button type="submit" variant="secondary">
+                  <Button type="submit" variant="outline">
                     Find Artist
                   </Button>
                 </div>

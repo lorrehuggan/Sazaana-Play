@@ -10,7 +10,7 @@ type Props = {
 
 export default function ArtistBlock({ artist, playlistHref }: Props) {
   return (
-    <div className="relative col-span-2 rounded-lg bg-foreground">
+    <div className="relative col-span-2 rounded-lg">
       <div className="relative h-full w-full overflow-hidden rounded-lg">
         {artist.items[0].images[0].url && (
           <Image
