@@ -1,4 +1,4 @@
-import FilterBlock from '../FilterBlock';
+import OptionBlock from '../OptionBlock';
 import PlaylistBlock from '../PlaylistBlock';
 import { getAccessToken } from '@/lib/service/auth';
 import { SpotifyCreatePlaylist } from '@/lib/service/spotify/tracks';
@@ -13,9 +13,9 @@ export default async function RowTwo({ searchParams }: Props) {
   const playlist = await SpotifyCreatePlaylist(searchParams, accessToken);
 
   return (
-    <div className="mx-auto mt-4 w-11/12 max-w-5xl grid grid-cols-3 gap-4 min-h-[580px] mb-16">
+    <div className="mx-auto mb-16 mt-4 grid min-h-[580px] w-11/12 max-w-5xl grid-cols-3 gap-4">
       <PlaylistBlock playlist={playlist} />
-      <FilterBlock playlist={playlist} seed={searchParams.seed_artists} />
+      <OptionBlock playlist={playlist} seed={searchParams.seed_artists} />
     </div>
   );
 }

@@ -1,5 +1,7 @@
+import UserArtists from '../UserArtistBlock';
 import FilterForm from './FilterForm';
 import SaveTrackilstForm from './SaveTracklistForm';
+import { getAccessToken } from '@/lib/service/auth';
 import type { Track } from '@/types';
 
 export type Props = {
@@ -7,10 +9,11 @@ export type Props = {
   playlist: Track[];
 };
 
-export default function FilterBlock({ seed, playlist }: Props) {
+export default function OptionBlock({ seed, playlist }: Props) {
   return (
-    <div className="space-y-4 col-span-1 h-fit">
+    <div className="col-span-1 h-fit space-y-4">
       <SaveTrackilstForm playlist={playlist} />
+      <UserArtists />
       <FilterForm />
     </div>
   );

@@ -1,3 +1,4 @@
+import AudioPlayer from './AudioPlayer';
 import { Track } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -48,7 +49,7 @@ export default function Tracklist({ playlist }: Props) {
             <div className="flex-1">
               <div className="flex items-center gap-1">
                 {track.explicit && (
-                  <div className="flex h-[16px] w-[16px] items-center justify-center rounded bg-lime-500">
+                  <div className="flex min-h-[16px] min-w-[16px] items-center justify-center rounded bg-lime-500">
                     <span className="text-[10px] font-medium leading-[1] text-white">
                       E
                     </span>
@@ -59,7 +60,7 @@ export default function Tracklist({ playlist }: Props) {
                 </p>
               </div>
               <div className="line-clamp-1 flex items-center gap-1">
-                {track.artists.map((artist) => {
+                {track.artists.slice(0, 1).map((artist) => {
                   return (
                     <Link
                       href={`/playlist/${artist.name}`}
@@ -82,6 +83,16 @@ export default function Tracklist({ playlist }: Props) {
                 </span>
               </div>
             </div>
+            {track.preview_url && (
+              <AudioPlayer
+                audioLink={track.preview_url}
+                title={track.name}
+                album={track.album.name}
+                artist={track.artists[0].name}
+                spotifyLink={track.external_urls.spotify}
+              />
+            )}
+            {!track.preview_url && <div className="w-14" />}
           </div>
         );
       })}
