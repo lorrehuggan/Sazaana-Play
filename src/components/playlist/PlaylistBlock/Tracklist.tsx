@@ -60,21 +60,21 @@ export default function Tracklist({ playlist }: Props) {
                 </p>
               </div>
               <div className="line-clamp-1 flex items-center gap-1">
-                {track.artists.slice(0, 1).map((artist) => {
+                {track.artists.slice(0, 2).map((artist, i) => {
                   return (
                     <Link
                       href={`/playlist/${artist.name}`}
                       key={artist.id}
                       className="line-clamp-1 text-xs hover:text-muted-foreground"
                     >
-                      {artist.name}
+                      {`${artist.name}${i === 0 && track.artists.length > 1 ? ',' : ''}`}
                     </Link>
                   );
                 })}
               </div>
             </div>
             <div className="flex-1">
-              <p className="line-clamp-1	text-sm font-medium">
+              <p className="line-clamp-1 text-sm font-medium">
                 {track.album.name}
               </p>
               <div className="line-clamp-1 flex items-center gap-1">
