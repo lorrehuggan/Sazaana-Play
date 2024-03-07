@@ -10,4 +10,5 @@ export const submitSearchSchema = z.object({
 
 export const saveTracksSchema = z.object({
   title: z.string().trim().min(1, { message: 'Title is required' }),
+  public: z.boolean(),
 });
