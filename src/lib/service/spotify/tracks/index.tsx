@@ -22,7 +22,7 @@ export async function SpotifyCreatePlaylist(
     const { seed_artists, ...otherParams } = searchParams;
 
     const url = new URL(
-        `https://api.spotify.com/v1/recommendations?seed_artists=${seed_artists}&limit=12`,
+        `https://api.spotify.com/v1/recommendations?seed_artists=${seed_artists}&limit=15`,
     );
 
     for (const key in otherParams) {
@@ -32,15 +32,16 @@ export async function SpotifyCreatePlaylist(
         }
     }
 
-    // const reponse = await fetch(url, {
-    //     method: 'GET',
-    //     headers: {
-    //         Authorization: `Bearer ${accessToken}`,
-    //     },
-    // });
-    //
-    // const data = await reponse.json();
-    // const recommendations = data as Recommendations;
-    // return recommendations.tracks;
-    return mockdata as Track[];
+    const reponse = await fetch(url, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+    });
+
+    const data = await reponse.json();
+    const recommendations = data as Recommendations;
+    return recommendations.tracks;
+    // await new Promise((resolve) => setTimeout(resolve, 6000));
+    // return mockdata as Track[];
 }
