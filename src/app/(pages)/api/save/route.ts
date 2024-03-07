@@ -16,6 +16,7 @@ export async function POST(request: Request) {
   const schema = z.object({
     title: z.string().min(1),
     ids: z.string().array(),
+    public: z.boolean(),
   });
 
   const data = await request.json();
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         name: parsed.title,
         description: 'Created with Sazaana.com',
-        public: false,
+        public: parsed.public,
       }),
     });
 
