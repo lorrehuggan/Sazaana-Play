@@ -5996,3 +5996,156 @@ export const mockArtist = {
   previous: null,
   total: 46
 }
+
+export const mockUserArtists = [
+  {
+    external_urls: {
+      spotify: "https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x"
+    },
+    followers: {
+      href: null,
+      total: 24040352
+    },
+    genres: [
+      "chicago rap",
+      "hip hop",
+      "rap"
+    ],
+    href: "https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x",
+    id: "5K4W6rqBFWDnAN6FQUkS6x",
+    images: [
+      {
+        height: 640,
+        url: "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a",
+        width: 640
+      },
+      {
+        height: 320,
+        url: "https://i.scdn.co/image/ab676161000051746e835a500e791bf9c27a422a",
+        width: 320
+      },
+      {
+        height: 160,
+        url: "https://i.scdn.co/image/ab6761610000f1786e835a500e791bf9c27a422a",
+        width: 160
+      }
+    ],
+    name: "Kanye West",
+    popularity: 95,
+    type: "artist",
+    uri: "spotify:artist:5K4W6rqBFWDnAN6FQUkS6x"
+  },
+  {
+    external_urls: {
+      spotify: "https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg"
+    },
+    followers: {
+      href: null,
+      total: 26917714
+    },
+    genres: [
+      "conscious hip hop",
+      "hip hop",
+      "rap",
+      "west coast rap"
+    ],
+    href: "https://api.spotify.com/v1/artists/2YZyLoL8N0Wb9xBt1NhZWg",
+    id: "2YZyLoL8N0Wb9xBt1NhZWg",
+    images: [
+      {
+        height: 640,
+        url: "https://i.scdn.co/image/ab6761610000e5eb437b9e2a82505b3d93ff1022",
+        width: 640
+      },
+      {
+        height: 320,
+        url: "https://i.scdn.co/image/ab67616100005174437b9e2a82505b3d93ff1022",
+        width: 320
+      },
+      {
+        height: 160,
+        url: "https://i.scdn.co/image/ab6761610000f178437b9e2a82505b3d93ff1022",
+        width: 160
+      }
+    ],
+    name: "Kendrick Lamar",
+    popularity: 88,
+    type: "artist",
+    uri: "spotify:artist:2YZyLoL8N0Wb9xBt1NhZWg"
+  },
+  {
+    external_urls: {
+      spotify: "https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+    },
+    followers: {
+      href: null,
+      total: 84527148
+    },
+    genres: [
+      "canadian hip hop",
+      "canadian pop",
+      "hip hop",
+      "pop rap",
+      "rap"
+    ],
+    href: "https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4",
+    id: "3TVXtAsR1Inumwj472S9r4",
+    images: [
+      {
+        height: 640,
+        url: "https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9",
+        width: 640
+      },
+      {
+        height: 320,
+        url: "https://i.scdn.co/image/ab676161000051744293385d324db8558179afd9",
+        width: 320
+      },
+      {
+        height: 160,
+        url: "https://i.scdn.co/image/ab6761610000f1784293385d324db8558179afd9",
+        width: 160
+      }
+    ],
+    name: "Drake",
+    popularity: 96,
+    type: "artist",
+    uri: "spotify:artist:3TVXtAsR1Inumwj472S9r4"
+  },
+  {
+    external_urls: {
+      spotify: "https://open.spotify.com/artist/4V8LLVI7PbaPR0K2TGSxFF"
+    },
+    followers: {
+      href: null,
+      total: 14202374
+    },
+    genres: [
+      "hip hop",
+      "rap"
+    ],
+    href: "https://api.spotify.com/v1/artists/4V8LLVI7PbaPR0K2TGSxFF",
+    id: "4V8LLVI7PbaPR0K2TGSxFF",
+    images: [
+      {
+        height: 640,
+        url: "https://i.scdn.co/image/ab6761610000e5eb8278b782cbb5a3963db88ada",
+        width: 640
+      },
+      {
+        height: 320,
+        url: "https://i.scdn.co/image/ab676161000051748278b782cbb5a3963db88ada",
+        width: 320
+      },
+      {
+        height: 160,
+        url: "https://i.scdn.co/image/ab6761610000f1788278b782cbb5a3963db88ada",
+        width: 160
+      }
+    ],
+    name: "Tyler, The Creator",
+    popularity: 84,
+    type: "artist",
+    uri: "spotify:artist:4V8LLVI7PbaPR0K2TGSxFF"
+  }
+]
