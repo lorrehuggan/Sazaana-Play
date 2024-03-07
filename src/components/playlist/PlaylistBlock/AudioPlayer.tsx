@@ -101,7 +101,7 @@ export default function AudioPlayer({
                 <DrawerTitle className="line-clamp-1">
                   {playing
                     ? `Now Playing ${artist ?? ''} - ${title}`
-                    : `Play ${title}`}
+                    : `Play ${artist ?? ''} - ${title}`}
                 </DrawerTitle>
                 <DrawerDescription>
                   {album && artist
@@ -117,7 +117,12 @@ export default function AudioPlayer({
                     <Play size={18} />
                   )}
                 </Button>
-                <Button variant="destructive" onClick={stop}>
+                <Button
+                  variant={
+                    playing ? 'destructive' : 'default'
+                  }
+                  onClick={stop}
+                >
                   <Square size={18} />
                 </Button>
                 <Button onClick={() => seek(pos - 5)}>
@@ -130,7 +135,7 @@ export default function AudioPlayer({
                   <Repeat2 size={18} />
                 </Button>
                 <Button asChild variant="outline">
-                  <a href={spotifyLink}>
+                  <a href={spotifyLink} target="_blank">
                     <svg
                       className="fill-primary"
                       width="24"
@@ -146,9 +151,6 @@ export default function AudioPlayer({
               </div>
               <DrawerFooter>
                 <Progress value={(pos / duration) * 100} />
-                {/* <DrawerClose> */}
-                {/*   <Button variant="outline">Cancel</Button> */}
-                {/* </DrawerClose> */}
               </DrawerFooter>
             </div>
           </DrawerContent>
