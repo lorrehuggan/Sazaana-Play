@@ -11,13 +11,11 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { saveTracksAction } from '@/lib/actions/tracks';
+import { Switch } from '@/components/ui/switch';
 import { saveTracksSchema } from '@/lib/service/schema';
 import { Track } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
-import Link from 'next/link';
-import { useMemo, useRef } from 'react';
-import { useFormState } from 'react-dom';
+import { useMemo } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -33,23 +31,27 @@ export default function SaveTrackilstForm({ playlist }: Props) {
     resolver: zodResolver(saveTracksSchema),
     defaultValues: {
       title: '',
+      public: false,
     },
   });
 
   const onSubmit: SubmitHandler<{
     title: string;
+    public: boolean;
   }> = async (data) => {
     try {
-      const response = fetch('/api/save', {
+      const payload = {
         method: 'POST',
         body: JSON.stringify({
           title: data.title,
+          public: data.public,
           ids,
         }),
         headers: {
           'Content-Type': 'application/json',
         },
-      });
+      };
+      const response = fetch('/api/save', payload);
       toast.promise(response, {
         success: 'Playlist saved to Spotify',
         error: 'Error saving playlist',
@@ -62,6 +64,7 @@ export default function SaveTrackilstForm({ playlist }: Props) {
           onClick: () => {
             window.open(
               'https://open.spotify.com/collection/playlists',
+              '_blank',
             );
           },
         },
@@ -84,25 +87,57 @@ export default function SaveTrackilstForm({ playlist }: Props) {
             control={form.control}
             name="title"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel
-                  htmlFor="title"
-                  className="mb-2 text-xl font-bold"
-                >
-                  Save Playlist
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    {...field}
-                    placeholder="Playlist Name"
-                    className="border-[1px] border-slate-900/30 bg-background"
-                  />
-                </FormControl>
-                <FormDescription>
-                  Enter a name for your playlist.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
+              <>
+                <FormItem>
+                  <FormLabel
+                    htmlFor="title"
+                    className="mb-2 text-xl font-bold"
+                  >
+                    Save Playlist
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="Playlist Name"
+                      className="border-[1px] border-slate-900/30 bg-background"
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    Enter a name for your playlist.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+                <FormField
+                  name="public"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem className="">
+                      <div className="flex items-center justify-between gap-2">
+                        <FormLabel
+                          htmlFor="title"
+                          className="text-sm"
+                        >
+                          Public Playlist
+                        </FormLabel>
+
+                        <FormControl>
+                          <Switch
+                            checked={field.value}
+                            onCheckedChange={
+                              field.onChange
+                            }
+                          />
+                        </FormControl>
+                      </div>
+                      <FormDescription>
+                        Make your playlist public or
+                        private.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
             )}
           />
           <Button
