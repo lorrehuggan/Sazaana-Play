@@ -1,5 +1,4 @@
-import { mockArtist, mockUserArtists } from '@/lib/mock';
-import { Artist, QueryArtists } from '@/types';
+import { Artist, QueryArtists } from "@/types";
 
 export const SpotifySearchArtist = async (
   artist: string,
@@ -7,11 +6,11 @@ export const SpotifySearchArtist = async (
 ) => {
   try {
     //TODO: zod validation
-
+    //
     const response = await fetch(
       `https://api.spotify.com/v1/search?q=${artist}&type=artist&limit=24`,
       {
-        method: 'GET',
+        method: "GET",
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -20,22 +19,27 @@ export const SpotifySearchArtist = async (
 
     const data = await response.json();
 
-    const artists = data.artists as QueryArtists;
+    const artists =
+      data.artists as QueryArtists;
     //
     return artists;
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) =>
+      setTimeout(resolve, 3000),
+    );
     // return mockArtist as QueryArtists;
   } catch (e) {
     console.error(e);
   }
 };
 
-export const SpotifyGetUsersTopArtists = async (accessToken: string) => {
+export const SpotifyGetUsersTopArtists = async (
+  accessToken: string,
+) => {
   try {
     const response = await fetch(
-      'https://api.spotify.com/v1/me/top/artists?offset=0&limit=4&time_range=long_term',
+      "https://api.spotify.com/v1/me/top/artists?offset=0&limit=4&time_range=long_term",
       {
-        method: 'GET',
+        method: "GET",
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

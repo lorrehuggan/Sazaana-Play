@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "8a74f5c1-004a-4fca-b239-fc56c402bc26",
+  "id": "2169c3c9-b526-4824-954c-b5bc3a226930",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "session": {
@@ -43,7 +43,15 @@
           "autoincrement": false
         }
       },
-      "indexes": {},
+      "indexes": {
+        "user_index": {
+          "name": "user_index",
+          "columns": [
+            "user_id"
+          ],
+          "isUnique": false
+        }
+      },
       "foreignKeys": {
         "session_user_id_user_id_fk": {
           "name": "session_user_id_user_id_fk",
@@ -92,7 +100,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": 1708880182198
+          "default": 1711835782010
         },
         "updated_at": {
           "name": "updated_at",
@@ -100,10 +108,18 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": 1708880182198
+          "default": 1711835782010
         }
       },
-      "indexes": {},
+      "indexes": {
+        "user_id_unique": {
+          "name": "user_id_unique",
+          "columns": [
+            "id"
+          ],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

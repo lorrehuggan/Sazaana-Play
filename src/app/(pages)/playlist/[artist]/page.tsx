@@ -39,7 +39,7 @@ export default async function Page({ params, searchParams }: Props) {
 
     return (
         <>
-            <div className="mx-auto mt-4 w-11/12 max-w-5xl grid grid-cols-5 gap-4 h-[380px]">
+            <div className="mx-auto mt-4 w-11/12 max-w-5xl grid grid-cols-5 grid-rows-2 md:grid-rows-1 gap-4 h-[480px] md:h-[380px]">
                 <ArtistBlock artist={artist} playlistHref={url.toString()} />
                 <ResultBlock artist={artist} />
             </div>

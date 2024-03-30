@@ -15,7 +15,7 @@ export default async function UserArtists() {
       </div>
     );
   return (
-    <div className=" space-y-2 rounded-lg border-[1px] border-primary p-8">
+    <div className=" space-y-2 rounded-lg border-[1px] border-primary p-8 hidden md:block">
       <div>
         <h4 className="text-xl font-bold">My Artist</h4>
       </div>
@@ -42,7 +42,7 @@ export default async function UserArtists() {
                 </div>
                 <Link
                   href={href}
-                  className="text-xs font-bold hover:text-muted-foreground"
+                  className="text-xs font-bold hover:text-muted-foreground line-clamp-1"
                 >
                   {artist.name}
                 </Link>
@@ -61,7 +61,7 @@ export default async function UserArtists() {
               </div>
               <Link
                 href={href}
-                className="text-xs font-bold hover:text-muted-foreground"
+                className="text-xs font-bold hover:text-muted-foreground line-clamp-1"
               >
                 {artist.name}
               </Link>

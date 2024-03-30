@@ -11,7 +11,7 @@ export type Props = {
 
 export default function OptionBlock({ seed, playlist }: Props) {
   return (
-    <div className="col-span-1 h-fit space-y-4">
+    <div className="col-span-3 md:col-span-1 h-fit space-y-4">
       <SaveTrackilstForm playlist={playlist} />
       <UserArtists />
       <FilterForm />
