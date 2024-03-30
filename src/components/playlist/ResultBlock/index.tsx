@@ -9,11 +9,11 @@ type Props = {
 
 export default function ResultBlock({ artist }: Props) {
   return (
-    <div className="col-span-3 rounded-lg border-[1px] border-primary p-8 overflow-hidden">
+    <div className="col-span-5 md:col-span-3 rounded-lg border-[1px] border-primary p-8 overflow-hidden">
       <h3 className="text-2xl font-bold tracking-tighter">
         Related Results:
       </h3>
-      <ScrollArea className="h-[280px] w-full ">
+      <ScrollArea className="h-[90%] md:h-[280px] w-full ">
         {artist.items.slice(1, artist.items.length).map((item) => {
           if (
             !item.images[2] ||
@@ -37,7 +37,7 @@ export default function ResultBlock({ artist }: Props) {
                   <p className="font-bold">{item.name}</p>
                   <div className="flex capitalize items-center text-xs text-muted-foreground gap-1">
                     {item.genres
-                      .slice(0, 3)
+                      .slice(0, 2)
                       .map((genre) => {
                         return (
                           <span key={genre}>

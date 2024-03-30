@@ -109,7 +109,7 @@ export default function AudioPlayer({
                     : album ?? artist}
                 </DrawerDescription>
               </DrawerHeader>
-              <div className="flex w-full items-center justify-between gap-2 px-4">
+              <div className="flex w-full items-center justify-between gap-2 md:px-4">
                 <Button onClick={togglePlayPause}>
                   {playing ? (
                     <Pause size={18} />

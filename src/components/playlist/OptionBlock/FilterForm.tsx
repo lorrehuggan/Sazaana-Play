@@ -127,7 +127,7 @@ export default function FilterForm() {
     }
 
     return (
-        <div className="p-8 rounded-lg border-[1px] border-primary">
+        <div className="p-8 hidden rounded-lg border-[1px] border-primary md:block">
             <h4 className="mb-2 font-bold text-xl">Filter Tracks</h4>
             <form className="space-y-2">
                 {data.map((item) => (

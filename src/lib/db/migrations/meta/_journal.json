@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1708880182203,
-      "tag": "0000_flippant_yellowjacket",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1709332064037,
-      "tag": "0001_unknown_chameleon",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1709341809357,
-      "tag": "0002_moaning_snowbird",
+      "when": 1711835782015,
+      "tag": "0000_zippy_red_hulk",
       "breakpoints": true
     }
   ]
