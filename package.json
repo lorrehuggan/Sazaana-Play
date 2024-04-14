@@ -14,6 +14,7 @@
 		"db:start": "turso dev --db-file database/local.db"
 	},
 	"dependencies": {
+		"@ducanh2912/next-pwa": "^10.2.6",
 		"@hookform/resolvers": "^3.3.4",
 		"@libsql/client": "^0.5.3",
 		"@lucia-auth/adapter-drizzle": "^1.0.3",
