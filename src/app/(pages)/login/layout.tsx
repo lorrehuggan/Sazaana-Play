@@ -1,5 +1,5 @@
-import { validateRequest } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+import { validateRequest } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 export default async function Layout({
     children,
@@ -7,7 +7,7 @@ export default async function Layout({
     const { session } = await validateRequest();
 
     if (session) {
-        return redirect('/playlist');
+        return redirect("/playlist");
     }
 
     return <main>{children}</main>;

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -9,26 +9,31 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { submitSearchAction } from '@/lib/actions/artist';
-import { submitSearchSchema } from '@/lib/service/schema';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useRef } from 'react';
-import { useFormState } from 'react-dom';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { submitSearchAction } from "@/lib/actions/artist";
+import { submitSearchSchema } from "@/lib/service/schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRef } from "react";
+import { useFormState } from "react-dom";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 export default function SearchForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useFormState(submitSearchAction, {
-    artist: '',
-  });
+  const [state, formAction] = useFormState(
+    submitSearchAction,
+    {
+      artist: "",
+    },
+  );
 
-  const form = useForm<z.output<typeof submitSearchSchema>>({
+  const form = useForm<
+    z.output<typeof submitSearchSchema>
+  >({
     resolver: zodResolver(submitSearchSchema),
     defaultValues: {
-      artist: '',
+      artist: "",
     },
   });
 
@@ -37,7 +42,9 @@ export default function SearchForm() {
       <form
         ref={formRef}
         action={formAction}
-        onSubmit={form.handleSubmit(() => formRef.current?.submit())}
+        onSubmit={form.handleSubmit(() =>
+          formRef.current?.submit(),
+        )}
         className="mt-4 flex w-full items-center gap-2"
       >
         <FormField
@@ -53,15 +60,21 @@ export default function SearchForm() {
                   <Input
                     {...field}
                     placeholder="Taylor Swift"
-                    className="w-full"
+                    className="w-full bg-neutral-100"
                   />
-                  <Button type="submit" variant="outline">
-                    Find Artist
+                  <Button
+                    type="submit"
+                    variant="outline"
+                  >
+                    Find
+                    Artist
                   </Button>
                 </div>
               </FormControl>
               <FormDescription>
-                Build a playlist based on your favorite artist
+                Build a playlist
+                based on your
+                favorite artist
               </FormDescription>
               <FormMessage />
             </FormItem>
