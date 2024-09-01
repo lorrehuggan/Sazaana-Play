@@ -1,6 +1,6 @@
 {
-  "printWidth": 50,
-  "tabWidth": 4,
+  "printWidth": 90,
+  "tabWidth": 2,
   "plugins": [
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss"

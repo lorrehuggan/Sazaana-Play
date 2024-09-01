@@ -8,75 +8,53 @@ import type { SearchParams } from "@/types";
 import { Suspense } from "react";
 
 type Props = {
-    params: {
-        artist: string;
-    };
-    searchParams: SearchParams;
+  params: {
+    artist: string;
+  };
+  searchParams: SearchParams;
 };
 
-export default async function Page({
-    params,
-    searchParams,
-}: Props) {
-    const accessToken = await getAccessToken();
+export default async function Page({ params, searchParams }: Props) {
+  const accessToken = await getAccessToken();
 
-    if (!accessToken)
-        return <div>Access token not found</div>;
+  if (!accessToken) return <div>Access token not found</div>;
 
-    const artist = await SpotifySearchArtist(
-        params.artist.trim(),
-        accessToken,
-    );
+  const artist = await SpotifySearchArtist(params.artist.trim(), accessToken);
 
-    if (!artist)
-        return <div>Artist not found</div>;
+  if (!artist) return <div>Artist not found</div>;
 
-    const url = new URL(
-        `${BASE_PATH}/playlist/${params.artist}`,
-    );
+  const url = new URL(`${BASE_PATH}/playlist/${params.artist}`);
 
-    url.searchParams.set(
-        "seed_artists",
-        artist.items[0].id,
-    );
-    url.searchParams.set("min_energy", "0");
-    url.searchParams.set("max_energy", "1");
-    url.searchParams.set("min_danceability", "0");
-    url.searchParams.set("max_danceability", "1");
-    url.searchParams.set("min_valence", "0");
-    url.searchParams.set("max_valence", "1");
-    url.searchParams.set("min_tempo", "0");
-    url.searchParams.set("max_tempo", "200");
-    url.searchParams.set("min_acousticness", "0");
-    url.searchParams.set("max_acousticness", "1");
+  url.searchParams.set("seed_artists", artist.items[0].id);
 
-    return (
-        <>
-            <div className="mx-auto mt-4 grid h-[480px] w-11/12 max-w-5xl grid-cols-5 grid-rows-2 gap-4 md:h-[380px] md:grid-rows-1">
-                <ArtistBlock
-                    artist={artist}
-                    playlistHref={url.toString()}
-                />
-                <ResultBlock artist={artist} />
+  url.searchParams.set("min_energy", "0");
+  url.searchParams.set("max_energy", "1");
+  url.searchParams.set("min_danceability", "0");
+  url.searchParams.set("max_danceability", "1");
+  url.searchParams.set("min_valence", "0");
+  url.searchParams.set("max_valence", "1");
+  url.searchParams.set("min_tempo", "0");
+  url.searchParams.set("max_tempo", "200");
+  url.searchParams.set("min_acousticness", "0");
+  url.searchParams.set("max_acousticness", "1");
+
+  return (
+    <>
+      <div className="mx-auto mt-4 grid h-[480px] w-11/12 max-w-5xl grid-cols-5 grid-rows-2 gap-4 md:h-[380px] md:grid-rows-1">
+        <ArtistBlock artist={artist} playlistHref={url.toString()} />
+        <ResultBlock artist={artist} />
+      </div>
+      {searchParams.seed_artists && (
+        <Suspense
+          fallback={
+            <div className="mx-auto mt-4 w-11/12 max-w-5xl">
+              <h4 className="font-bold">Compiling Playlist...</h4>
             </div>
-            {searchParams.seed_artists && (
-                <Suspense
-                    fallback={
-                        <div className="mx-auto mt-4 w-11/12 max-w-5xl">
-                            <h4 className="font-bold">
-                                Compiling
-                                Playlist...
-                            </h4>
-                        </div>
-                    }
-                >
-                    <RowTwo
-                        searchParams={
-                            searchParams
-                        }
-                    />
-                </Suspense>
-            )}
-        </>
-    );
+          }
+        >
+          <RowTwo searchParams={searchParams} />
+        </Suspense>
+      )}
+    </>
+  );
 }

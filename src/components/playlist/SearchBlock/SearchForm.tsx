@@ -21,16 +21,11 @@ import { z } from "zod";
 
 export default function SearchForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useFormState(
-    submitSearchAction,
-    {
-      artist: "",
-    },
-  );
+  const [state, formAction] = useFormState(submitSearchAction, {
+    artist: "",
+  });
 
-  const form = useForm<
-    z.output<typeof submitSearchSchema>
-  >({
+  const form = useForm<z.output<typeof submitSearchSchema>>({
     resolver: zodResolver(submitSearchSchema),
     defaultValues: {
       artist: "",
@@ -42,9 +37,7 @@ export default function SearchForm() {
       <form
         ref={formRef}
         action={formAction}
-        onSubmit={form.handleSubmit(() =>
-          formRef.current?.submit(),
-        )}
+        onSubmit={form.handleSubmit(() => formRef.current?.submit())}
         className="mt-4 flex w-full items-center gap-2"
       >
         <FormField
@@ -52,9 +45,7 @@ export default function SearchForm() {
           name="artist"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel htmlFor="artist">
-                Enter artist name
-              </FormLabel>
+              <FormLabel htmlFor="artist">Enter artist name</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-2">
                   <Input
@@ -62,19 +53,13 @@ export default function SearchForm() {
                     placeholder="Taylor Swift"
                     className="w-full bg-neutral-100"
                   />
-                  <Button
-                    type="submit"
-                    variant="outline"
-                  >
-                    Find
-                    Artist
+                  <Button type="submit" variant="outline">
+                    Find Artist
                   </Button>
                 </div>
               </FormControl>
               <FormDescription>
-                Build a playlist
-                based on your
-                favorite artist
+                Build a playlist based on your favorite artist
               </FormDescription>
               <FormMessage />
             </FormItem>

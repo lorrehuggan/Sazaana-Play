@@ -7,10 +7,9 @@ import {
 } from "./schema/user";
 
 const sqliteClient = createClient({
-    url: "libsql://sazaana-lorrehuggan.turso.io",
+    url: process.env.DATABASE_URL ?? "",
     authToken:
-        "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MjMyMjEzNTIsImlkIjoiZjkyZjExNjEtZGE5Mi00ZTUxLTllOWYtOWM3OTllMWM4YjI3In0.F0GbJlNv05SmqiWuUdNRQNvz5f5z7ECJmcd38Wc055RkkUTXgsf_5YpTZIOX3m0-NBXZI--SaRTSBGSrKGuMAw",
-    // authToken: env.DATABASE_AUTH_TOKEN,
+        process.env.DATABASE_AUTH_TOKEN ?? "",
 });
 
 export const db = drizzle(sqliteClient, {
