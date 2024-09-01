@@ -1,4 +1,6 @@
+import { validateRequest } from "@/lib/auth";
 import { Recommendations } from "@/types";
+import { filterLimiter } from "../../redis/limiters";
 
 type SearchParams = {
     seed_artists: string;
@@ -18,18 +20,22 @@ export async function SpotifyCreatePlaylist(
     searchParams: SearchParams,
     accessToken: string,
 ) {
-    const { seed_artists, ...otherParams } =
-        searchParams;
+    const { session } = await validateRequest();
+
+    if (!session) throw new Error("Session not found");
+
+    const { success } = await filterLimiter.limit(session.userId);
+
+    if (!success) throw new Error("Rate limit exceeded");
+
+    const { seed_artists, ...otherParams } = searchParams;
 
     const url = new URL(
         `https://api.spotify.com/v1/recommendations?seed_artists=${seed_artists}&limit=15`,
     );
 
     for (const key in otherParams) {
-        const value =
-            otherParams[
-            key as keyof typeof otherParams
-            ];
+        const value = otherParams[key as keyof typeof otherParams];
         if (value !== undefined) {
             url.searchParams.set(key, value);
         }
@@ -43,8 +49,7 @@ export async function SpotifyCreatePlaylist(
     });
 
     const data = await reponse.json();
-    const recommendations =
-        data as Recommendations;
+    const recommendations = data as Recommendations;
     return recommendations.tracks;
     // return mockdata as Track[];
 }

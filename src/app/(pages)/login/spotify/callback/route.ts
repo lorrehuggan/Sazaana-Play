@@ -10,7 +10,6 @@ import { cookies } from "next/headers";
 export async function GET(
     request: Request,
 ): Promise<Response> {
-    console.log("callback");
     const url = new URL(request.url);
 
     const code = url.searchParams.get("code");
@@ -21,12 +20,6 @@ export async function GET(
         "spotify_auth_code_verifier",
     )?.value;
 
-    console.log({
-        code,
-        storedState,
-        codeVerifierCookie,
-    });
-
     if (
         !code ||
         !storedState ||
@@ -36,8 +29,6 @@ export async function GET(
             status: 400,
         });
     }
-
-    console.log("validating state");
 
     try {
         const tokens =
@@ -54,8 +45,6 @@ export async function GET(
                 },
             },
         );
-
-        console.log(tokens);
 
         const spotifyUser =
             (await spotifyUserResponse.json()) as unknown as SpotifyUser;
