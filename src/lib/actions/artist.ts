@@ -1,11 +1,10 @@
-'use server';
+"use server";
 
-import { submitSearchSchema } from '../service/schema';
-import { redirect } from 'next/navigation';
-import { z } from 'zod';
+import { redirect } from "next/navigation";
+import { submitSearchSchema } from "../service/schema";
 
 export async function searchArtist(formData: FormData) {
-  const artist = formData.get('artist');
+  const artist = formData.get("artist");
 
   return redirect(`/playlist/${artist}`);
 }
@@ -19,8 +18,10 @@ export async function submitSearchAction(prev: FormState, data: FormData) {
   const parsed = submitSearchSchema.safeParse(formData);
 
   if (!parsed.success) {
-    return redirect('/playlist');
+    return redirect("/playlist");
   }
 
-  return redirect(`/playlist/${formData.artist}`);
+  const url = `/playlist/${parsed.data.artist}`;
+
+  return redirect(url);
 }
