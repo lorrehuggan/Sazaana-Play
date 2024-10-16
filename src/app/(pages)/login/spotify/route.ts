@@ -6,7 +6,6 @@ import {
 import { cookies } from "next/headers";
 
 export async function GET(): Promise<Response> {
-    console.log({ spotify });
     const url =
         await spotify.createAuthorizationURL(
             state,
