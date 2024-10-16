@@ -452,7 +452,7 @@
       "src": "ios/1024.png",
       "sizes": "1024x1024"
     }
-  ]
+  ],
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
   "start_url": "/",
