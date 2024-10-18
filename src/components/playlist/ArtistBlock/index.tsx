@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import { QueryArtists } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -15,12 +14,11 @@ export default function ArtistBlock({ artist, playlistHref }: Props) {
       <div className="relative h-full w-full overflow-hidden rounded-lg">
         {artist.items[0].images[0].url && (
           <>
-            <Image
-              fill
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={artist.items[0].images[0].url}
               alt="current artist"
               className="object-cover grayscale md:hidden"
-              sizes=""
             />
             <DirectionAwareHover
               className="relative hidden grayscale md:block"

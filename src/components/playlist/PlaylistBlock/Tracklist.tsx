@@ -1,5 +1,4 @@
 import { Track } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
 import AudioPlayer from "./AudioPlayer";
 
@@ -33,10 +32,10 @@ export default function Tracklist({ playlist }: Props) {
         return (
           <div key={track.id} className="flex w-full items-center gap-4">
             <div className="relative h-16 w-16 overflow-hidden rounded-lg">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={track.album.images[1].url}
                 alt={track.album.name}
-                fill
                 sizes="100px"
                 className="object-cover object-center"
               />

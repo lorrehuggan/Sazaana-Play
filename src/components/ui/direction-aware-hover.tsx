@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useRef, useState } from "react";
 
 export const DirectionAwareHover = ({
@@ -84,7 +83,8 @@ export const DirectionAwareHover = ({
               ease: "easeOut",
             }}
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               alt="image"
               className={cn("h-full w-full scale-[1.15] object-cover", imageClassName)}
               width="1000"

@@ -1,6 +1,5 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { QueryArtists } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -19,11 +18,11 @@ export default function ResultBlock({ artist }: Props) {
             <Link key={item.id} href={`/playlist/${item.name}`}>
               <div className="flex items-center gap-4 py-2">
                 <div className="relative h-[50px] w-[50px] overflow-hidden rounded-sm">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     className="object-cover grayscale"
                     src={item.images[2].url}
                     alt={item.name}
-                    fill
                   />
                 </div>
                 <div>
